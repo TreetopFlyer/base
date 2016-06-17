@@ -8,5 +8,6 @@ server.engine('handlebars', handlebars());
 server.set('view engine', 'handlebars');
 
 server.use('/api/user', require('./middleware/restUser.js'));
+server.use('/', require('./middleware/loginFacebook.js'));
 
 module.exports = server;
