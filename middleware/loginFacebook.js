@@ -15,10 +15,12 @@ passport.use(new passportFacebook.Strategy({
     }
 ));
 passport.serializeUser(function(user, done) {
-  done(null, user);
+    console.log("serialize called");
+    done(null, user);
 });
 passport.deserializeUser(function(user, done) {
-  done(null, user);
+    console.log("deserialize called");
+    done(null, user);
 });
 
 router.use(passport.initialize());
