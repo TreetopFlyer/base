@@ -5,15 +5,11 @@ var server = require('../server');
 var should = chai.should();
 chai.use(chaiHTTP);
 
-function checkStatus(inError, inResponse){
-    should.not.exist(inError);
+function checkStatus(inResponse){
     should.exist(inResponse);
     inResponse.should.have.status(200);
     inResponse.should.be.json;
 }
-
-
-
 
 
 
@@ -26,14 +22,11 @@ describe('Project files REST', function(){
         .set('Authentication', '')
         .send()
         .then(function(inAccept){
-            checkStatus(inError, inResponse);
-            inResponse.body.should.have.property('projects');
-            inResponse.body.projects.should.be.an('array');
+            checkStatus(inAccept);
+            inAccept.body.should.have.property('projects');
+            inAccept.body.projects.should.be.an('array');
         }, function(inReject){
-
-        })
-        .catch(function(inError){
-            throw inError;
+            throw inReject;
         });
     });
 

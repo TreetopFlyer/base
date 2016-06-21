@@ -1,2 +1,2 @@
-var server = require('./server');
-server.listen(80);
+require('dotenv').config();
+require('./server').listen(80);

@@ -35,11 +35,9 @@
         },
         {
             "name": "Mocha",
-            "request": "launch",
             "type": "node",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
-            "stopOnEntry": true,
-            "args": ["test"],
+            "request": "launch",
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
             "env": {
