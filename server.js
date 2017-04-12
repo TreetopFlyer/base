@@ -9,7 +9,7 @@ server.engine('handlebars', handlebars());
 server.set('view engine', 'handlebars');
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
-server.user(cookieParser());
+server.use(cookieParser());
 server.use("/static", express.static(__dirname+'/static'));
 server.get("/", function(inReq, inRes)
 {
